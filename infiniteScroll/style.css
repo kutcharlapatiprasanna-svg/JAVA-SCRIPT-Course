@@ -1,0 +1,14 @@
+.small-container{
+    width: 200px;
+    height: 300px;
+    border: 2px solid violet;
+    overflow-y: scroll;
+}
+
+li{
+    list-style: none;
+    padding: 10px 0px ;
+}
+li:hover{
+background-color: gray;
+}
