@@ -1,0 +1,73 @@
+body{
+      font-family: "Poppins", sans-serif;
+}
+.fr-aic{
+    display: flex;
+    align-items: center;
+} 
+
+.create-issue-btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: #65728A;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.create-issue-btn:hover{
+    background-color:#DEE1E5;
+}
+section{
+    /* border: 2px solid blueviolet; */
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+      
+}
+
+.container{
+    min-width: min(250px ,90vw);
+    height: 400px;
+    background-color: #f8f8f8 ;
+    border-radius: 10px;
+}
+.container>p{
+    color: #657265;
+    font-size: 18px;
+}
+input{
+    width: 95%;
+    border: 2px solid red;
+    resize:none;
+    border-radius: 2px;
+    padding-bottom: 30px;
+    
+}
+
+.hide{
+    display: none;
+}
+
+.card{
+    background-color: white;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #182A4D;
+    border-radius: 5px;
+    box-shadow: 1px 3px 1px  #182A4D;
+}
+
+
+/* .card:hover{
+    background-color: #657265;
+} */
+.card >.material-symbols{
+    
+    font-size: 18px !important;
+ 
+}
