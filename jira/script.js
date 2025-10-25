@@ -60,9 +60,15 @@ const issuecard = document.createElement("div");
                 <span>${issuName}</span>
                 <span class="material-icons" onclick="deletecard(this)">delete</span>
            `;
+   issuecard.draggable = true; //why true because draggle by defualt false we have to make enable true
+   issuecard.addEventListener("dragstart",onDragstart);
+          
+          
            issueinput.value="";
            todoContainer.appendChild(issuecard);
            issueinput.blur();    
+
+  
 
     }
 
