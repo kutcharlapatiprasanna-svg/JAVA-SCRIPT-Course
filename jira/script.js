@@ -1,47 +1,105 @@
 const createIssue = document.getElementById("create-issue");
-const text = document.getElementById("text-issue");
+const issueinput = document.getElementById("issue-input");
 const todoContainer = document.getElementById("todo");
 
 
 
-createIssue.addEventListener("click",oncreateClick);
+createIssue.addEventListener("click", oncreateClick);
 
-text.addEventListener("keyup",onenterInput);
+issueinput.addEventListener("blur",onBlurCreateIssueInput);
+//blur means unfocussing input
+issueinput.addEventListener("keyup", onenterInput);
 
 
 
-function togglecreateissueOptions(){
+function togglecreateissueOptions() {
     createIssue.classList.toggle("hide");
-    text.classList.toggle("hide");
-    if(!text.classList.contains("hide")){
+    issueinput.classList.toggle("hide");
+    if (!issueinput.classList.contains("hide")) {
         //if user sees the input area then we need to auto focus onto it.
-        text.focus();
+       issueinput.focus();
     }
 
 }
-
 function onBlurCreateIssueInput(){
+    if(!issueinput.classList.contains("hide")){
+        togglecreateissueOptions();
+    }
+}
+
+
+// function onBlurCreateIssueInput() {
+//     if (!issueinput.classList.contains("hide")) {
+//         togglecreateissueOptions();
+//     }
+// }
+
+function oncreateClick() {
     togglecreateissueOptions();
 }
 
-function oncreateClick(){
-    togglecreateissueOptions();
-}
-
-function onenterInput(e){
+function onenterInput(e) {
+    // console.log(e); 
     if(e.keyCode===13){
-        const issuName = text.value;
-   
-    if(!issuName){
-        return ;
-    }
-    const issuecard = document.getElementById("div");
-    issuecard.className = "card";
+      //  clicked on enter
+        const issuName = issueinput.value ;
+        if(!issuName){
+            return;
+        }
 
-    issuecard.innerHTML= `
-               <span>${issuName}</span>
-                <span class="material-symbols-outlined">delete</span>
-                `;
-                todoContainer.appendChild(issuecard);
+    //  <div class="card">
+    //             <span>Ui for Exclidraw</span>
+    //             <span class="material-icons">delete</span>
+    //         </div>
+
+
+const issuecard = document.createElement("div");
+    issuecard.className=("card");
+
+    issuecard.innerHTML=`
+                <span>${issuName}</span>
+                <span class="material-icons" onclick="deletecard(this)">delete</span>
+           `;
+           issueinput.value="";
+           todoContainer.appendChild(issuecard);
+           issueinput.blur();    
+
     }
+
+
 }
+
+
+function deletecard(deleteButton){
+    const card = deleteButton.parentNode;
+    card.remove();
+}
+    // if (e.keyCode === 13) {
+    //     const issuName = issueinput.value;
+
+    //     if (!issuName) {
+    //         return;
+    //     }
+
+        // creation of some tasks and dlete it
+
+        // const issuecard = document.createElement("div");
+        // issuecard.className = "card";
+        //innerhtm gives entire html . instead of creting individual nodes and doing that.
+        // issuecard.innerHTML = `  
+        //        <span>${issuName}</span>
+        //         <span class="material-icons ">delete</span>
+        //         `;
+        // todoContainer.appendChild(issuecard);
+        // togglecreateissueOptions()
+    // }
+
+
+// const deleteIcon = issuecard.querySelector(".material-icons");
+// deleteIcon.addEventListener("click", () => {
+//   issuecard.remove(); // removes the card from DOM
+// });
+
+
+
+
