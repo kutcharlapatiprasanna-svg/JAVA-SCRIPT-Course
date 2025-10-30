@@ -1,5 +1,6 @@
 let columns = 26;
 let rows = 100;
+
 const headerContainer = document.querySelector(".header");
 
 const serialNumberContainer = document.querySelector(".sno");
@@ -56,6 +57,7 @@ function bulidMainSection(){
     }
 }
 
+// createRow();
 // createRow();
 createSerialNumberCells();    
 
