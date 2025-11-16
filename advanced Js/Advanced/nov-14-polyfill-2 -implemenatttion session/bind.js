@@ -10,7 +10,7 @@ function printingVersion(city, country){
 // console.log(printingVersion.bind(objprasanna));
 
 const newresult1 = printingVersion.bind(objprasanna,`delhi`);
-console.log(newresult1(`hyd`));
+console.log(newresult1(`hyd`)); 
 
 
 Function.prototype.bind2 = function(contetObj = {},...args){

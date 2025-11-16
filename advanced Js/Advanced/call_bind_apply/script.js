@@ -171,8 +171,8 @@ console.log(person.getAge.apply(person2));
 console.log(person.getAge.bind(person2)()); */
 
 
-var array =[1,2];
-var elements =[3,4,5];
+// var array =[1,2];
+// var elements =[3,4,5];
 
 // concatenate both the arrays using apply method
 
@@ -195,7 +195,53 @@ console.log() */
 
 // array.push.apply(array,elements);
 
-array.push.call (array,...elements);
+// array.push.call (array,...elements);
 
-console.log(array);
+// console.log(array);
 
+
+
+
+
+const obj = {
+     firstName:`hitesh`,
+     lastName:`marwaha`,
+    //  fullName:function(city,country){
+    //     // console.log(this)
+    //     return this.firstName+' '+this.lastName+ ' from '+city+','+country;
+    //  },
+};
+
+function fullName(city,country, ...rest){
+        // console.log(this)
+        //   console.log(rest)
+        return this.firstName+' '+this.lastName+ ' from '+city+','+country;
+      
+     };
+
+
+const obj2 = {
+    firstName:`jhon`,
+    lastName:`Doe`,
+};
+
+const arr = [4,5,6,]
+function func(){
+
+}
+
+
+// console.log(obj.fullName());
+
+// console.log(obj.fullName("delhi","india"));
+// console.log(obj.fullName.call(obj2,`hyd`,`kdp`))
+
+
+// console.log(obj.fullName.apply(obj2,[`hyd`,`kdp`]))
+
+
+
+// console.log(fullName("delhi","india"));
+console.log(fullName.call(obj2,`rajam`,`bobbili`,"jdknd","nvjdkkn"));
+// console.log(fullName.apply(obj2,[`hyd`,`kdp`]))
+// console.log(fullName.call(obj2))
